@@ -1,25 +1,36 @@
 package com.example.arena.entities;
 
-import org.jetbrains.annotations.NotNull;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.HashSet;
+import javax.persistence.*;
+import java.util.*;
 
 @Entity
 public class User {
     @Id @GeneratedValue
-    public int id;
+    private long id;
+    public String frist_name;
+//    private String last_name;
+//    private String email;
+//    private String password;
+//    private boolean active;
+//    private long birthday;
+//    @ManyToMany
+//    private Set<Order> orders;
 
-    @NotNull @Column(unique = true, length = 10000)
-    public String username;
+
+    public User(String frist_name) {
+        this.frist_name = frist_name;
+//        this.last_name = last_name;
+//        this.email = email;
+//        this.password = password;
+//        this.active = active;
+//        this.birthday = birthday;
+//        this.orders = orders;
+    }
 
     public User() {
+
     }
 
-    public User(String username) {
-        this.username = username;
-    }
+
+
 }
