@@ -6,16 +6,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Selects")
-public class Order {
+@Table(name = "orders")
+public class Orders {
     @Id @GeneratedValue
     private long id;
     public String name;
 
-    public Order() {
+    public Orders() {
     }
 
-    public Order(String name) {
+    public Orders(String name) {
         this.name = name;
     }
 }

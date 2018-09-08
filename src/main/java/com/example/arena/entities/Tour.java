@@ -1,18 +1,16 @@
 package com.example.arena.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "tours")
 public class Tour {
     @Id @GeneratedValue
     private long id;
     public String name;
 
-//    @OneToOne
-//    public Order order;
+    @OneToOne
+    public Orders order;
 
     public Tour() {
     }
