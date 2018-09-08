@@ -26,20 +26,40 @@ public class DataLoader implements ApplicationRunner {
         // int[] a = new int[] {0, 1, 2, 3,4};
 
         for (int i = 10000; i < 10000 + 200; i++) {
-            User temp = new User(Integer.toString(i));
+            User temp = new User(
+                "name" + Integer.toString(i),
+                "last_name",
+                "email",
+                "password",
+                true,
+                10L
+            );
+
             userRepository.save(temp);
         }
 
         for (int i = 10000; i < 10000 + 200; i++) {
-            Tour temp = new Tour("name" + Integer.toString(i));
-            tourRepository.save(temp);
+            Tour temp_order = new Tour(
+                    "name" + Integer.toString(i),
+                    "descrition" + Integer.toString(i),
+                    "location" + Integer.toString(i),
+                    200L,
+                    200L,
+                    20
+            );
+            tourRepository.save(temp_order);
         }
 
-//        for (int i = 10000; i < 10000 + 200; i++) {
-//            Order temp = new Order("n29");
-//            orderRepository.save(temp);
-//        }
-//        System.out.println("HELLO from run");
+       /* for (int i = 10000; i < 10000 + 200; i++) {
+            Tour temp = new Tour("name" + Integer.toString(i));
+            tourRepository.save(temp);
+        }*/
+
+/*        for (int i = 10000; i < 10000 + 200; i++) {
+            Order temp = new Order("n29");
+            orderRepository.save(temp);
+        }
+        System.out.println("HELLO from run");*/
     }
 
 }

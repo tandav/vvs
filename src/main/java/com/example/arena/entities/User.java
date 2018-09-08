@@ -7,31 +7,29 @@ import java.util.*;
 @Table(name = "users")
 public class User {
     @Id @GeneratedValue
-    private long id;
-    public String frist_name;
-//    private String last_name;
-//    private String email;
-//    private String password;
-//    private boolean active;
-//    private long birthday;
-//    @ManyToMany
-//    private Set<Order> orders;
+    public Long id;
+    public String first_name;
+    public String last_name;
+    public String email;
+    public String password;
+    public boolean active;
+    public Long birthday;
+    @ManyToMany
+    public Set<Order> orders;
 
-
-    public User(String frist_name) {
-        this.frist_name = frist_name;
-//        this.last_name = last_name;
-//        this.email = email;
-//        this.password = password;
-//        this.active = active;
-//        this.birthday = birthday;
-//        this.orders = orders;
+    public User(String first_name, String last_name, String email, String password, boolean active, Long birthday) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
+        this.active = active;
+        this.birthday = birthday;
+        this.orders = new HashSet<>();
     }
 
     public User() {
 
     }
-
 
 
 }
